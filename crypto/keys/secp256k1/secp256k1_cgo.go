@@ -1,4 +1,4 @@
-// +build libsecp256k1
+// +build !libsecp256k1
 
 package secp256k1
 
@@ -23,4 +23,8 @@ func (privKey *PrivKey) Sign(msg []byte) ([]byte, error) {
 // The msg will be hashed prior to signature verification.
 func (pubKey *PrivKey) VerifySignature(msg []byte, sig []byte) bool {
 	return secp256k1.VerifySignature(pubKey.Key, crypto.Sha256(msg), sig)
+}
+
+func(pubkey *PubKey) VerifySignature(msg []byte, sig []byte) bool {
+	return secp256k1.VerifySignature(pubkey.Bytes(), crypto.Sha256(msg), sig)
 }

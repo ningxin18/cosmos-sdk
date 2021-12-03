@@ -1,9 +1,11 @@
-// +build !libsecp256k1
+// +build libsecp256k1
 
 package secp256k1
 
 import (
+	"fmt"
 	"testing"
+	"time"
 
 	secp256k1 "github.com/btcsuite/btcd/btcec"
 	"github.com/stretchr/testify/require"
@@ -36,3 +38,22 @@ func TestSignatureVerificationAndRejectUpperS(t *testing.T) {
 		)
 	}
 }
+
+
+func TestVerifySig(t *testing.T)  {
+	msg := []byte("We have lingered long enough on the shores of the cosmic ocean.")
+	for i:=1; i<10; i++ {
+		priv := GenPrivKey()
+		sigStr, err := priv.Sign(msg)
+		require.NoError(t, err)
+		sig := signatureFromBytes(sigStr)
+		require.False(t, sig.S.Cmp(secp256k1halfN) > 0)
+
+		time1 := time.Now()
+		pub := priv.PubKey()
+		ok := pub.VerifySignature(msg, sigStr)
+		fmt.Println("time:", time.Now().Sub(time1).Microseconds())
+		require.True(t, ok)
+	}
+}
+
