@@ -9,7 +9,7 @@ require (
 	github.com/bgentry/speakeasy v0.1.0
 	github.com/btcsuite/btcd v0.21.0-beta
 	github.com/btcsuite/btcutil v1.0.2
-	github.com/confio/ics23/go v0.6.3
+	github.com/confio/ics23/go v0.7.0
 	github.com/cosmos/go-bip39 v1.0.0
 	github.com/cosmos/iavl v0.15.3
 	github.com/cosmos/ledger-cosmos-go v0.11.1
@@ -26,7 +26,7 @@ require (
 	github.com/grpc-ecosystem/go-grpc-middleware v1.2.2
 	github.com/grpc-ecosystem/grpc-gateway v1.16.0
 	github.com/hashicorp/golang-lru v0.5.4
-	github.com/magiconair/properties v1.8.4
+	github.com/magiconair/properties v1.8.4 // indirect
 	github.com/mattn/go-isatty v0.0.12
 	github.com/otiai10/copy v1.4.2
 	github.com/pelletier/go-toml v1.8.0 // indirect
