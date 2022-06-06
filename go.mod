@@ -26,7 +26,7 @@ require (
 	github.com/grpc-ecosystem/go-grpc-middleware v1.2.2
 	github.com/grpc-ecosystem/grpc-gateway v1.16.0
 	github.com/hashicorp/golang-lru v0.5.4
-	github.com/magiconair/properties v1.8.4
+	github.com/magiconair/properties v1.8.4 // indirect
 	github.com/mattn/go-isatty v0.0.12
 	github.com/otiai10/copy v1.4.2
 	github.com/pelletier/go-toml v1.8.0 // indirect
@@ -42,7 +42,7 @@ require (
 	github.com/spf13/jwalterweatherman v1.1.0 // indirect; indirects
 	github.com/spf13/pflag v1.0.5
 	github.com/spf13/viper v1.7.1
-	github.com/stretchr/testify v1.7.0
+	github.com/stretchr/testify v1.7.2
 	github.com/tendermint/btcd v0.1.1
 	github.com/tendermint/crypto v0.0.0-20191022145703-50d29ede1e15
 	github.com/tendermint/go-amino v0.16.0
